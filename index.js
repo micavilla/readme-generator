@@ -54,7 +54,7 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-  const content = typeof data ==='string' ? data : JSON.stringify(data, null, 2);
+  const content = typeof data ==='string' ? data : JSON.stringify(data, null);
 
   fs.writeFile(fileName, content, (err) => {
     if(err) {
@@ -69,48 +69,48 @@ function writeToFile(fileName, data) {
 function init() {
   inquirer
   .prompt(questions)
-  .then((response)=> {
-    const readMeContent = generateReadMeContent(response);
-    writeToFile('README.md', readMeContent);
+  .then((data)=> {
+    // const readMeContent = generateReadMeContent(response);
+    writeToFile('README.md', generateMarkdown(data));
   })
   .catch((error)=> {
     console.error('error: ', error);
   })
 }
 
-function generateReadMeContent(response) {
-  return `# ${response.title}
+// function generateReadMeContent(response) {
+//   return `# ${response.title}
   
-  ## Description
-  ${response.description}
+//   ## Description
+//   ${response.description}
   
-  ## Table of Contents
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Contributing](#contributing)
-  - [Tests](#tests)
-  - [License](#license)
-  - [Questions](#questions)
+//   ## Table of Contents
+//   - [Installation](#installation)
+//   - [Usage](#usage)
+//   - [Contributing](#contributing)
+//   - [Tests](#tests)
+//   - [License](#license)
+//   - [Questions](#questions)
   
-  ## Installation
-  ${response.Installation}
+//   ## Installation
+//   ${response.Installation}
 
-  ## Usage
-  ${response.usage}
+//   ## Usage
+//   ${response.usage}
 
-  ## Contributing
-  ${response.contributing}
+//   ## Contributing
+//   ${response.contributing}
 
-  ## Tests
-  ${response.tests}
+//   ## Tests
+//   ${response.tests}
 
-  ## License
-  ${response.license}
+//   ## License
+//   ${response.license}
 
-  ## Questions
-  For any questions about the project, please feel free to reach out to [${response.github}](https://github.com/${response.github}) or contact via email at ${response.email}.
-  `;
-}
+//   ## Questions
+//   For any questions about the project, please feel free to reach out to [${response.github}](https://github.com/${response.github}) or contact via email at ${response.email}.
+//   `;
+// }
 
 // Function call to initialize app
 init();

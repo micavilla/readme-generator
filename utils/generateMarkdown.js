@@ -31,40 +31,19 @@ function renderLicenseLink(license) {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {
+function renderLicenseSection(data) {
   let licenseSection = '';
 
-  if(license !== 'none'){
-    licenseSection += "## License";
-    licenseSection += `See the ${renderLicenseLink(license)} in order to get more information for the license`
+  if(data.license != 'Unlicensed'){
+    licenseSection += `This project is distributed under the ${renderLicenseLink(data.license)} license.`
+  } else {
+    return licenseSection;
   }
-  return licenseSection;
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
-  ## Description
-  ${data.description}
-  ## Table of Contents
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Contributing](#contributing)
-  - [Tests](#tests)
-  - [License](#license)
-  - [Questions](#questions)
-  ## Installation
-  ${data.installation}
-  ## Usage
-  ${data.usage}
-  ## Contributing
-  ${data.contributing}
-  ## Tests
-  ${data.tests}
-  ## License
-  ${renderLicenseSection(license)}
-  ## Questions
-  For any questions about the project, please feel free to reach out to [${data.github}](https://github.com/${data.github}) or contact via email at ${data.email}.
+  return `# ${data.title}\n## Description\n${data.description}\n## Table of Contents\n- [Installation](#installation)\n- [Usage](#usage)\n- [Contributing](#contributing)\n- [Tests](#tests)\n- [License](#license)\n- [Questions](#questions)\n## Installation\n${data.installation}\n## Usage\n${data.usage}\n## Contributing\n${data.contributing}\n## Tests\n${data.tests}\n## License\n${renderLicenseSection(data.license)}\n## Questions\nFor any questions about the project, please feel free to reach out to [${data.github}](https://github.com/${data.github}) or contact via email at ${data.email}.
 `;
 }
 
