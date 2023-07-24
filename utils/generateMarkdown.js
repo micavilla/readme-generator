@@ -35,7 +35,7 @@ function renderLicenseSection(license) {
   let LicenseSection ='';
 
   if(license != 'Unlicensed'){
-    LicenseSection += `See ${renderLicenseLink(license)} to learn more`;
+    LicenseSection += `See ${renderLicenseLink(license)} to learn more.`;
   }
   return LicenseSection;
 }

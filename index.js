@@ -53,12 +53,12 @@ const questions = [
 }]
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
+function writeToFileSync(fileName, data) {
   const content = typeof data ==='string' ? data : JSON.stringify(data, null);
 
   fs.writeFile(fileName, content, (err) => {
     if(err) {
-      console.error('error making file: ', err);
+      console.error('Error making file: ', err);
     } else {
       console.log('File successfully created: ', fileName);
     }
@@ -70,7 +70,7 @@ function init() {
   inquirer
   .prompt(questions)
   .then((data)=> {
-    writeToFile('README.md', generateMarkdown(data));
+    writeToFileSync('README-output.md', generateMarkdown(data));
   })
   .catch((error)=> {
     console.error('error: ', error);
