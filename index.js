@@ -70,7 +70,6 @@ function init() {
   inquirer
   .prompt(questions)
   .then((data)=> {
-    // const readMeContent = generateReadMeContent(response);
     writeToFile('README.md', generateMarkdown(data));
   })
   .catch((error)=> {
@@ -78,39 +77,4 @@ function init() {
   })
 }
 
-// function generateReadMeContent(response) {
-//   return `# ${response.title}
-  
-//   ## Description
-//   ${response.description}
-  
-//   ## Table of Contents
-//   - [Installation](#installation)
-//   - [Usage](#usage)
-//   - [Contributing](#contributing)
-//   - [Tests](#tests)
-//   - [License](#license)
-//   - [Questions](#questions)
-  
-//   ## Installation
-//   ${response.Installation}
-
-//   ## Usage
-//   ${response.usage}
-
-//   ## Contributing
-//   ${response.contributing}
-
-//   ## Tests
-//   ${response.tests}
-
-//   ## License
-//   ${response.license}
-
-//   ## Questions
-//   For any questions about the project, please feel free to reach out to [${response.github}](https://github.com/${response.github}) or contact via email at ${response.email}.
-//   `;
-// }
-
-// Function call to initialize app
 init();

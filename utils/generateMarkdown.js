@@ -2,7 +2,7 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   let badge ='';
-  if(license != none){
+  if(license != 'Unlicensed'){
     badge = "![License Badge](https://shields.io/badge/license-" + license + "-green)";
   }
   return badge;
@@ -34,7 +34,7 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
   let LicenseSection ='';
 
-  if(license != 'none'){
+  if(license != 'Unlicensed'){
     LicenseSection += `See ${renderLicenseLink(license)} to learn more`;
   }
   return LicenseSection;
@@ -42,7 +42,7 @@ function renderLicenseSection(license) {
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}\n## Description\n${data.description}\n## Table of Contents\n- [Installation](#installation)\n- [Usage](#usage)\n- [Contributing](#contributing)\n- [Tests](#tests)\n- [License](#license)\n- [Questions](#questions)\n## Installation\n${data.installation}\n## Usage\n${data.usage}\n## Contributing\n${data.contributing}\n## Tests\n${data.tests}\n## License\n${renderLicenseSection(data.license)}\n## Questions\nFor any questions about the project, please feel free to reach out to [${data.github}](https://github.com/${data.github}) or contact via email at ${data.email}.
+  return `# ${data.title}\n${renderLicenseBadge(data.license)}\n## Description\n${data.description}\n## Table of Contents\n- [Installation](#installation)\n- [Usage](#usage)\n- [Contributing](#contributing)\n- [Tests](#tests)\n- [License](#license)\n- [Questions](#questions)\n## Installation\n${data.installation}\n## Usage\n${data.usage}\n## Contributing\n${data.contributing}\n## Tests\n${data.tests}\n## License\n${renderLicenseSection(data.license)}\n## Questions\nFor any questions about the project, please feel free to reach out to [${data.github}](https://github.com/${data.github}) or contact via email at ${data.email}.
 `;
 }
 
