@@ -16,4 +16,6 @@ This repository is licensed by MIT. See https://mit-license.org/ to learn more.
 ## Usage
 Walkthrough Video: https://drive.google.com/file/d/1ZZwBRpDN9V90W3aV7HS5kbfBPxdsZkl2/view?usp=sharing
 
+To try this application on your device, git clone and delete example file, README-output.md. Then, open the integrated terminal in your code editor and enter `node index.js` to start the application.
+
 ![Command-Line Application Screenshot](readme-output-screenshot.png)
