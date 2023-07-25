@@ -14,6 +14,6 @@ Joey Lee: https://github.com/Rockojoe2
 This repository is licensed by MIT. See https://mit-license.org/ to learn more.
 
 ## Usage
-Walkthrough Video: https://drive.google.com/file/d/1YRq5ir6Bof4EZYl7plL0OBI7ZCXpmrqy/view?usp=sharing
+Walkthrough Video: https://drive.google.com/file/d/1ZZwBRpDN9V90W3aV7HS5kbfBPxdsZkl2/view?usp=sharing
 
-![Application Screenshot](readme-generator-screenshot.png)
+![Command-Line Application Screenshot](readme-output-screenshot.png)
